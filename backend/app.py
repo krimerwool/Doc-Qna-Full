@@ -8,8 +8,10 @@ from google.generativeai import configure, GenerativeModel
 from pydantic import BaseModel
 import logging
 from chromadb import Client
+from dotenv import load_dotenv
 
-os.environ['GOOGLE_API_KEY'] = 'PLEASE PASTE YOUR GEMINI-FLASH-1.5 API KEY HERE'
+load_dotenv()
+
 configure(api_key = os.getenv('GOOGLE_API_KEY'))
 app = FastAPI()
 
